@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Edit Profile</h2>
+<form method="POST">
+    <label for="bio">Bio</label>
+    <textarea id="bio" name="bio" rows="4">{{ bio }}</textarea>
+
+    <label for="profile_picture">Profile Picture URL</label>
+    <input type="text" id="profile_picture" name="profile_picture" value="{{ profile_picture }}">
+
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}

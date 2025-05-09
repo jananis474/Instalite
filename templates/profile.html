@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ username }}'s Profile</h2>
+
+<div class="profile-card">
+    <img src="{{ profile_picture or '/static/default-profile.png' }}" alt="Profile Picture" class="profile-pic">
+    <p><strong>Bio:</strong> {{ bio or 'This user has no bio.' }}</p>
+    <a href="{{ url_for('edit_profile') }}">Edit Profile</a>
+</div>
+
+<h3>Your Posts</h3>
+<div class="posts">
+    {% for post in posts %}
+    <div class="post-card">
+        <img src="{{ post[2] }}" alt="Post Image" class="post-image">
+        <p>{{ post[3] }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
