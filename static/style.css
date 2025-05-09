@@ -1,0 +1,695 @@
+/* Reset and General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.5;
+}
+
+
+/* Top Navigation Bar */
+
+.top-nav {
+    background-color: #000;
+    border-bottom: 1px solid #262626;
+    padding: 16px 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-container .logo {
+    font-family: 'Billabong', cursive;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.search-bar {
+    position: relative;
+    width: 268px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 9px 36px 9px 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #262626;
+    color: #8e8e8e;
+    font-size: 0.9rem;
+}
+
+.search-bar input::placeholder {
+    color: #8e8e8e;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8e8e8e;
+    font-size: 0.9rem;
+}
+
+.nav-container nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-container nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.nav-container nav a:hover {
+    color: #fff;
+}
+
+
+/* Content Wrapper */
+
+.content-wrapper {
+    padding-top: 80px;
+}
+
+
+/* Login Page and Post Creation Page */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+    gap: 40px;
+}
+
+.login-image {
+    flex: 1;
+    max-width: 400px;
+    display: none;
+    /* Hidden on mobile */
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-radius: 20px;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Billabong', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-form input,
+.login-form input[type="file"] {
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.login-form input[type="file"] {
+    padding: 10px;
+    /* Slightly adjusted padding for file input */
+}
+
+.login-form input::placeholder {
+    color: #666;
+}
+
+.login-btn {
+    background-color: #0095f6;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #007cd5;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #666;
+}
+
+.divider span {
+    margin: 0 10px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #333;
+}
+
+.fb-login {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.forgot-password {
+    display: block;
+    margin: 15px 0;
+    color: #0095f6;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.signup-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.signup-link a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.inline-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+
+/* Sign-up Page */
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+.signup-form {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.signup-tagline {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.signup-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.signup-form input {
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.signup-btn {
+    background-color: #0095f6;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.signup-btn:hover {
+    background-color: #007cd5;
+}
+
+.terms {
+    font-size: 0.75rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.terms a {
+    color: #0095f6;
+    text-decoration: none;
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-link a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* Home Page */
+
+.app-container {
+    display: flex;
+}
+
+
+/* Main Content */
+
+.main-content {
+    flex: 1;
+    padding: 40px 30px;
+    max-width: 975px;
+    margin: 0 auto;
+}
+
+.stories {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 20px 0;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.stories::-webkit-scrollbar {
+    display: none;
+}
+
+.story {
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.story-wrapper {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.story img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #000;
+    object-fit: cover;
+}
+
+.story span {
+    display: block;
+    font-size: 0.75rem;
+    color: #fff;
+    margin-top: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.post-card {
+    background-color: #000;
+    border: 1px solid #262626;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 614px;
+    margin: 0 auto;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+}
+
+.post-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.post-header .dot {
+    font-size: 0.5rem;
+    color: #8e8e8e;
+    margin: 0 4px;
+}
+
+.profile-pic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.post-time {
+    color: #8e8e8e;
+    font-size: 0.75rem;
+}
+
+.follow-btn {
+    background: none;
+    border: none;
+    color: #0095f6;
+    font-weight: 600;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.follow-btn[data-following="true"] {
+    color: #8e8e8e;
+}
+
+.post-image-container {
+    position: relative;
+}
+
+.post-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.post-actions {
+    display: flex;
+    gap: 20px;
+    padding: 12px 20px;
+}
+
+.post-actions button,
+.post-actions a {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.post-actions button.liked i {
+    color: #ed4956;
+    font-weight: bold;
+}
+
+.post-actions button i:hover,
+.post-actions a i:hover {
+    color: #fff;
+}
+
+.likes,
+.caption,
+.view-comments,
+.comment {
+    padding: 0 20px 12px;
+    font-size: 0.875rem;
+}
+
+.likes strong {
+    font-weight: 600;
+}
+
+.caption strong {
+    margin-right: 5px;
+}
+
+.view-comments {
+    color: #8e8e8e;
+    font-size: 0.875rem;
+}
+
+.comment strong {
+    margin-right: 5px;
+}
+
+.add-comment-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-top: 1px solid #262626;
+}
+
+.add-comment-form input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #262626;
+    border-radius: 20px;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+.add-comment-form input::placeholder {
+    color: #8e8e8e;
+}
+
+.post-comment-btn {
+    background: none;
+    border: none;
+    color: #0095f6;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.post-comment-btn:hover {
+    color: #007cd5;
+}
+
+.delete-button {
+    background-color: #ed4956;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    margin: 12px 20px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #d73847;
+}
+
+
+/* Right Sidebar */
+
+.right-sidebar {
+    width: 350px;
+    padding: 40px 30px;
+    position: fixed;
+    right: 0;
+    height: 100vh;
+}
+
+.user-info,
+.suggestion {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.user-info div,
+.suggestion div {
+    flex: 1;
+}
+
+.user-info span,
+.suggestion span {
+    color: #8e8e8e;
+    font-size: 0.75rem;
+}
+
+.switch,
+.follow {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.suggestions h4 {
+    color: #8e8e8e;
+    font-size: 0.875rem;
+    margin-bottom: 16px;
+}
+
+
+/* Like and Comment Buttons */
+
+.like-btn,
+.comment-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.like-btn:hover,
+.comment-btn:hover {
+    color: #ccc;
+}
+
+.like-btn.liked i {
+    color: #ed4956;
+    font-weight: bold;
+}
+
+.like-btn.liked i::before {
+    content: "\f004";
+    /* Font Awesome solid heart */
+}
+
+.comment-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-top: 1px solid #262626;
+}
+
+.comment-form input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #262626;
+    border-radius: 20px;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+.comment-form input::placeholder {
+    color: #8e8e8e;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .right-sidebar {
+        display: none;
+    }
+    .main-content {
+        max-width: 614px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 12px 20px;
+    }
+    .nav-container {
+        flex-direction: row;
+        gap: 10px;
+    }
+    .nav-container nav {
+        gap: 14px;
+    }
+    .nav-container nav a {
+        font-size: 1.3rem;
+    }
+    .search-bar {
+        width: 180px;
+    }
+    .main-content {
+        padding: 30px 20px;
+    }
+    .content-wrapper {
+        padding-top: 60px;
+    }
+    .login-form,
+    .signup-form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 20px 15px;
+    }
+    .nav-container nav a {
+        font-size: 1.1rem;
+    }
+    .add-comment-form input {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+    .post-comment-btn {
+        font-size: 1rem;
+    }
+    .search-bar {
+        width: 140px;
+    }
+    .nav-container nav {
+        gap: 10px;
+    }
+    .top-nav {
+        padding: 10px 15px;
+    }
+}
