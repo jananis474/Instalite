@@ -1,0 +1,38 @@
+{% extends 'social/base.html' %}
+
+{% block title %}{{ user.username }}'s Profile - Instagram{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-header">
+        <img src="{{ user_profile.profile_picture.url|default:'/static/default_profile.png' }}" 
+             alt="Profile Picture" class="profile-picture">
+        <div class="profile-info">
+            <h2>{{ user.username }}</h2>
+            <div class="profile-stats">
+                <span><strong>{{ posts|length }}</strong> posts</span>
+                <span><strong>0</strong> followers</span>
+                <span><strong>0</strong> following</span>
+            </div>
+            <div class="profile-bio">
+                {{ user_profile.bio|default:"No bio yet" }}
+            </div>
+            <a href="{% url 'edit_profile' %}" class="edit-profile-btn">Edit Profile</a>
+        </div>
+    </div>
+
+    <div class="profile-posts">
+        {% for post in posts %}
+        <div class="profile-post">
+            <img src="{{ post.image.url }}" alt="Post">
+        </div>
+        {% empty %}
+        <div class="no-posts">
+            <h3>No posts yet!</h3>
+            <p>Share your first post with the world.</p>
+            <a href="{% url 'upload' %}" class="create-post-button">Create Post</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %} 

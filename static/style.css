@@ -1,0 +1,655 @@
+/* Theme Variables */
+
+:root[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #fafafa;
+    --text-primary: #262626;
+    --text-secondary: #8e8e8e;
+    --border-color: #dbdbdb;
+    --button-primary: #0095f6;
+    --button-hover: #0086e6;
+    --button-secondary: #efefef;
+    --like-color: #ed4956;
+    --search-bg: #efefef;
+    --nav-bg: #ffffff;
+}
+
+:root[data-theme="dark"] {
+    --bg-primary: #000000;
+    --bg-secondary: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #a8a8a8;
+    --border-color: #262626;
+    --button-primary: #0095f6;
+    --button-hover: #0086e6;
+    --button-secondary: #262626;
+    --like-color: #ed4956;
+    --search-bg: #262626;
+    --nav-bg: #000000;
+}
+
+
+/* Reset and Base Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+
+/* Navigation Bar */
+
+.navbar {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 60px;
+}
+
+.nav-wrapper {
+    max-width: 975px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.nav-items-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-items-left .logo img {
+    height: 29px;
+}
+
+.logo-light {
+    display: block;
+}
+
+.logo-dark {
+    display: none;
+}
+
+[data-theme="dark"] .logo-light {
+    display: none;
+}
+
+[data-theme="dark"] .logo-dark {
+    display: block;
+}
+
+.nav-items-center {
+    flex: 0 1 auto;
+    min-width: 125px;
+    width: 215px;
+}
+
+.search-wrapper {
+    position: relative;
+    background-color: var(--search-bg);
+    border-radius: 8px;
+    padding: 7px 16px;
+}
+
+.search-wrapper i {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.search-wrapper input {
+    border: none;
+    background: none;
+    font-size: 14px;
+    color: var(--text-primary);
+    width: calc(100% - 24px);
+}
+
+.search-wrapper input::placeholder {
+    color: var(--text-secondary);
+}
+
+.nav-items-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-item {
+    color: var(--text-primary);
+    font-size: 24px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Main Content */
+
+.main-content {
+    max-width: 935px;
+    margin: 80px auto 0;
+    padding: 0 20px;
+}
+
+
+/* Login/Register Forms */
+
+.login-container,
+.register-container {
+    max-width: 350px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
+.login-form,
+.register-form {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 1px;
+    padding: 40px;
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Billabong', cursive;
+    font-size: 28px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .logo {
+    color: var(--text-primary);
+}
+
+.login-form form,
+.register-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.login-form input,
+.register-form input {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding: 9px 8px 7px;
+    font-size: 12px;
+    color: var(--text-primary);
+}
+
+.login-btn,
+.register-btn {
+    background-color: var(--button-primary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.divider span {
+    margin: 0 18px;
+}
+
+.fb-login {
+    color: #385185;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.forgot-password {
+    color: #00376b;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 12px 0;
+    display: block;
+}
+
+.signup-link,
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.signup-link a,
+.login-link a {
+    color: var(--button-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.terms {
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 16px;
+    margin: 20px 0;
+}
+
+.terms a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+
+/* Posts */
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.post-card {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    margin-bottom: 24px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    position: relative;
+}
+
+.post-header img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.post-header .username {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 750px;
+    object-fit: cover;
+}
+
+.post-actions {
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--text-primary);
+}
+
+.post-actions button.liked i {
+    color: var(--like-color);
+}
+
+.likes {
+    padding: 0 16px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.caption {
+    padding: 0 16px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.caption .username {
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.comments-section {
+    padding: 0 16px;
+    margin-bottom: 8px;
+}
+
+.comment {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.comment .username {
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.comment-form {
+    display: flex;
+    align-items: center;
+    padding: 6px 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.comment-form input {
+    flex: 1;
+    border: none;
+    padding: 8px 0;
+    font-size: 14px;
+    outline: none;
+    background: none;
+    color: var(--text-primary);
+}
+
+.comment-form input::placeholder {
+    color: var(--text-secondary);
+}
+
+.comment-form button {
+    background: none;
+    border: none;
+    color: var(--button-primary);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 8px;
+}
+
+
+/* Profile Page */
+
+.profile-container {
+    max-width: 935px;
+    margin: 0 auto;
+    padding: 30px 20px 0;
+}
+
+.profile-header {
+    display: flex;
+    margin-bottom: 44px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 100px;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h2 {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.profile-stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.profile-stats span {
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.profile-stats strong {
+    font-weight: 600;
+}
+
+.profile-bio {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--text-primary);
+}
+
+.edit-profile-btn {
+    display: inline-block;
+    padding: 7px 16px;
+    background-color: var(--button-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.profile-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.profile-post {
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.profile-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Edit Profile */
+
+.edit-profile-container {
+    max-width: 935px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
+.edit-profile-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.edit-profile-form h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.profile-picture-upload {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.current-picture {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.edit-profile-form textarea {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    resize: none;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.save-btn {
+    width: 100%;
+    padding: 7px 16px;
+    background-color: var(--button-primary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background-color: var(--button-hover);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .nav-items-center {
+        display: none;
+    }
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-picture {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .profile-stats {
+        justify-content: center;
+    }
+    .profile-posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-posts {
+        grid-template-columns: 1fr;
+    }
+    .nav-items-right {
+        gap: 16px;
+    }
+    .nav-item {
+        font-size: 20px;
+    }
+}
+
+
+/* Post Options Menu */
+
+.post-options {
+    position: relative;
+    margin-left: auto;
+}
+
+.post-option-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 16px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.post-options-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+.post-options-menu.show {
+    display: block;
+}
+
+.delete-option {
+    width: 100%;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    color: #ed4956;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.delete-option:hover {
+    background-color: var(--bg-secondary);
+}
+
+.delete-option i {
+    font-size: 16px;
+}

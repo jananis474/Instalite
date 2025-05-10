@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}InstaLite{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-wrapper">
+            <div class="nav-items-wrapper">
+                <div class="nav-items-left">
+                    <a href="{% url 'home' %}" class="logo">InstaLite</a>
+                </div>
+                <div class="nav-items-right">
+                    <a href="{% url 'home' %}" class="nav-item">
+                        <i class="fas fa-home"></i>
+                    </a>
+                    <a href="{% url 'upload' %}" class="nav-item">
+                        <i class="fas fa-plus-square"></i>
+                    </a>
+                    <a href="{% url 'profile' request.user.username %}" class="nav-item">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <button id="themeToggle" class="nav-item theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="{% url 'logout' %}" class="nav-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% block extra_js %}{% endblock %}
+
+    <script>
+        // Theme toggle functionality
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - InstaLite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <h1 class="logo">InstaLite</h1>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" class="login-btn">Log In</button>
+            </form>
+            <div class="divider">
+                <span>OR</span>
+            </div>
+           
+            
+            <div class="signup-link">
+                Don't have an account? <a href="{% url 'register' %}">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html> 

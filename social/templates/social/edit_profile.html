@@ -1,0 +1,21 @@
+{% extends 'social/base.html' %}
+
+{% block title %}Edit Profile - Instalite{% endblock %}
+
+{% block content %}
+<div class="edit-profile-container">
+    <div class="edit-profile-form">
+        <h1 class="logo">Edit Profile</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="profile-picture-upload">
+                <img src="{{ user_profile.profile_picture.url|default:'/static/default_profile.png' }}" 
+                     alt="Current Profile Picture" class="current-picture">
+                <input type="file" name="profile_picture" accept="image/*">
+            </div>
+            <textarea name="bio" placeholder="Write a bio...">{{ user_profile.bio }}</textarea>
+            <button type="submit" class="save-btn">Save Changes</button>
+        </form>
+    </div>
+</div>
+{% endblock %} 
